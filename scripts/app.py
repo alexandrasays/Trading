@@ -1,6 +1,10 @@
 import requests
 import pandas as pd
 import json
+from flask import Flask, render_template
+import os
+
+app = Flask(__name__)
 
 def load_api_key(file_path):
     with open(file_path, 'r') as file:
@@ -20,12 +24,14 @@ def pull_data_from_alpha_vantage(symbol, api_key):
     else:
         raise Exception(f"Failed to fetch data: {response.status_code}")
 
-def save_data_to_csv(dataframe, file_path):
-    dataframe.to_csv(file_path, index=True)
-
-if __name__ == "__main__":
+@app.route('/')
+def index():
     config_path = "config.json"
     api_key = load_api_key(config_path)
     symbol = "IBM"
     data = pull_data_from_alpha_vantage(symbol, api_key)
-    save_data_to_csv(data, "data/ibm_daily.csv")
+    data_html = data.to_html(classes='table table-striped')
+    return render_template('index.html', tables=[data_html], titles=[''])
+
+if __name__ == "__main__":
+    app.run(debug=True)
