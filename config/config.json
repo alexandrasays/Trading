@@ -1,6 +1,6 @@
 {
-    "api_url": "https://api.example.com/trading-data",
+    "api_url": "https://www.alphavantage.co/query?",
     "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
+        "Authorization": "Bearer 3KJM1GHU8VUCMNSW"
     }
 }
