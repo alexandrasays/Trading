@@ -1,5 +1,5 @@
 {
-    "api_url": "https://www.alphavantage.co/query?function=",
+    "api_url": "https://www.alphavantage.co/query",
     "headers": {
         "Authorization": "Bearer 3KJM1GHU8VUCMNSW"
     }
