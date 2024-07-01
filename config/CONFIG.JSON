@@ -1,3 +1,4 @@
 {
-    "api_key": "3KJM1GHUBVUCMNSW"
+   "api_url": "https://www.alphavantage.co/query"
+"api_key": "3KJM1GHUBVUCMNSW"
 }
