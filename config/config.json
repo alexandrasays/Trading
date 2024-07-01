@@ -1,0 +1,6 @@
+{
+    "api_url": "https://api.example.com/trading-data",
+    "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+    }
+}
