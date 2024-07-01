@@ -1,0 +1,7 @@
+git init trading-platform
+cd trading-platform
+echo "# Trading Platform Data Puller" >> README.md
+echo "venv/" >> .gitignore
+echo "__pycache__/" >> .gitignore
+git add README.md .gitignore
+git commit -m "Initial commit"
