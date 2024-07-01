@@ -1,9 +1,5 @@
-{
-    "api_url": "https://www.alphavantage.co/query?",
-    "headers": {
-        "Authorization": "Bearer 3KJM1GHU8VUCMNSW"
-    }
-}
+import requests
+
 # replace the "demo" apikey below with your own key from https://www.alphavantage.co/support/#api-key
 url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=3KJM1GHU8VUCMNSW'
 r = requests.get(url)
