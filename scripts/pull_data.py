@@ -2,6 +2,11 @@ import requests
 import pandas as pd
 import json
 
+def load_api_key(file_path):
+    with open(file_path, 'r') as file:
+        config = json.load(file)
+        return config['api_key']
+
 def pull_data_from_alpha_vantage(symbol, api_key):
     url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={api_key}"
     response = requests.get(url)
@@ -19,7 +24,8 @@ def save_data_to_csv(dataframe, file_path):
     dataframe.to_csv(file_path, index=True)
 
 if __name__ == "__main__":
-    api_key = "YOUR_API_KEY"
+    config_path = "config.json"
+    api_key = load_api_key(config_path)
     symbol = "IBM"
     data = pull_data_from_alpha_vantage(symbol, api_key)
     save_data_to_csv(data, "data/ibm_daily.csv")
